@@ -47,6 +47,19 @@ module.exports = {
           800: '#1e293b',
           900: '#0f172a',
           950: '#04081a',
+        },
+        mocha: {
+          base: '#1e1e2e',
+          surface0: '#313244',
+          surface1: '#45475a',
+          text: '#cdd6f4',
+          subtext: '#a6adc8',
+          overlay0: '#6c7086',
+          blue: '#89b4fa',
+          lavender: '#b4befe',
+          mauve: '#cba6f7',
+          red: '#f38ba8',
+          peach: '#fab387'
         }
       },
       typography: ({ theme }) => ({

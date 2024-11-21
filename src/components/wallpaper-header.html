@@ -1,0 +1,33 @@
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-mocha-surface0/80 backdrop-blur-lg border-b border-mocha-surface1">
+    <nav class="container mx-auto px-4 h-16 flex items-center justify-between">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 text-mocha-mauve">
+            <i data-lucide="image" class="w-6 h-6"></i>
+            <span class="font-bold text-lg">WallpaperAI</span>
+        </a>
+
+        <!-- Search Bar -->
+        <div class="hidden md:flex flex-1 max-w-xl mx-8">
+            <div class="relative w-full">
+                <input type="search" 
+                       placeholder="Search wallpapers..." 
+                       class="w-full py-2 px-4 pl-10 bg-mocha-surface1/50 rounded-lg border border-mocha-surface1 focus:outline-none focus:border-mocha-mauve text-mocha-text placeholder-mocha-overlay0">
+                <i data-lucide="search" class="w-5 h-5 absolute left-3 top-1/2 -translate-y-1/2 text-mocha-overlay0"></i>
+            </div>
+        </div>
+
+        <!-- Right Actions -->
+        <div class="flex items-center gap-4">
+            <button class="md:hidden text-mocha-text hover:text-mocha-mauve" aria-label="Search">
+                <i data-lucide="search" class="w-6 h-6"></i>
+            </button>
+            <button class="text-mocha-text hover:text-mocha-mauve" aria-label="Theme">
+                <i data-lucide="moon" class="w-6 h-6"></i>
+            </button>
+            <button class="hidden md:block px-4 py-2 bg-mocha-mauve text-mocha-base rounded-lg hover:bg-mocha-lavender transition-colors">
+                Upload
+            </button>
+        </div>
+    </nav>
+</header>
