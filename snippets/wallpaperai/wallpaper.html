@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-[#1e1e2e] text-[#cdd6f4]">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Beautiful Nature Wallpaper - High quality phone wallpaper for your device">
+    <meta name="keywords" content="nature wallpaper, phone wallpaper, mobile background, HD wallpaper">
+    <title>Beautiful Nature - Walle Wallpaper</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Navigation -->
+    <header class="sticky top-0 z-50 bg-[#181825]/80 backdrop-blur-lg border-b border-[#313244]">
+        <nav class="container mx-auto px-4 h-16 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="/" class="flex items-center gap-2 text-[#cba6f7]">
+                <i data-lucide="image" class="w-6 h-6"></i>
+                <span class="font-bold text-lg">Walle</span>
+            </a>
+
+            <!-- Main Navigation -->
+            <div class="flex items-center gap-6">
+                <a href="/" class="text-[#cdd6f4] hover:text-[#cba6f7] transition-colors" title="Home">
+                    <i data-lucide="home" class="w-5 h-5"></i>
+                </a>
+                <a href="/trending" class="text-[#cdd6f4] hover:text-[#cba6f7] transition-colors" title="Trending">
+                    <i data-lucide="trending-up" class="w-5 h-5"></i>
+                </a>
+                <a href="/new" class="text-[#cdd6f4] hover:text-[#cba6f7] transition-colors" title="New">
+                    <i data-lucide="sparkles" class="w-5 h-5"></i>
+                </a>
+                <a href="/top" class="text-[#cdd6f4] hover:text-[#cba6f7] transition-colors" title="Top">
+                    <i data-lucide="star" class="w-5 h-5"></i>
+                </a>
+                <button class="text-[#cdd6f4] hover:text-[#cba6f7] transition-colors" title="Search">
+                    <i data-lucide="search" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 container mx-auto px-4 py-6">
+        <!-- Wallpaper Section -->
+        <div class="max-w-2xl mx-auto">
+            <!-- Wallpaper Image -->
+            <div class="bg-[#313244] rounded-lg overflow-hidden">
+                <div class="aspect-[9/16] relative group">
+                    <img src="https://picsum.photos/600/800?random=1" 
+                         alt="Beautiful Nature Wallpaper" 
+                         class="w-full h-full object-cover"
+                         loading="lazy">
+                    <!-- Download Button -->
+                    <button class="absolute bottom-4 right-4 bg-[#cba6f7] hover:bg-[#b4befe] text-[#1e1e2e] rounded-full px-4 py-2 flex items-center gap-2 transition-colors">
+                        <i data-lucide="download" class="w-4 h-4"></i>
+                        <span class="text-sm font-medium">Download</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Wallpaper Info -->
+            <div class="mt-6 space-y-4">
+                <h1 class="text-xl font-medium text-[#cdd6f4]">Beautiful Nature</h1>
+                <p class="text-sm text-[#a6adc8]">A stunning natural landscape captured in perfect detail, ideal for your phone's wallpaper. This high-resolution image brings the beauty of nature to your device.</p>
+                
+                <!-- Tags -->
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-xs px-3 py-1 rounded-full bg-[#45475a] text-[#cdd6f4]">#nature</span>
+                    <span class="text-xs px-3 py-1 rounded-full bg-[#45475a] text-[#cdd6f4]">#landscape</span>
+                    <span class="text-xs px-3 py-1 rounded-full bg-[#45475a] text-[#cdd6f4]">#photography</span>
+                    <span class="text-xs px-3 py-1 rounded-full bg-[#45475a] text-[#cdd6f4]">#mobile</span>
+                </div>
+            </div>
+
+            <!-- Related Wallpapers -->
+            <section class="mt-12">
+                <h2 class="text-lg font-medium text-[#cdd6f4] mb-4">Related Wallpapers</h2>
+                <div class="grid grid-cols-2 gap-3">
+                    <!-- Related Wallpaper 1 -->
+                    <article class="group relative bg-[#313244] rounded-lg overflow-hidden">
+                        <a href="/wallpaper/3" class="block aspect-[9/16] overflow-hidden">
+                            <img src="https://picsum.photos/600/800?random=3" 
+                                 alt="Mountain Landscape" 
+                                 class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                 loading="lazy">
+                        </a>
+                        <div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-[#181825] to-transparent">
+                            <h3 class="text-sm font-medium text-[#cdd6f4] truncate">Mountain View</h3>
+                            <div class="flex flex-wrap gap-1 mt-1">
+                                <span class="text-[10px] px-1.5 py-0.5 rounded-full bg-[#45475a] text-[#cdd6f4]">#mountain</span>
+                                <span class="text-[10px] px-1.5 py-0.5 rounded-full bg-[#45475a] text-[#cdd6f4]">#nature</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Related Wallpaper 2 -->
+                    <article class="group relative bg-[#313244] rounded-lg overflow-hidden">
+                        <a href="/wallpaper/4" class="block aspect-[9/16] overflow-hidden">
+                            <img src="https://picsum.photos/600/800?random=4" 
+                                 alt="Forest Scene" 
+                                 class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                 loading="lazy">
+                        </a>
+                        <div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-[#181825] to-transparent">
+                            <h3 class="text-sm font-medium text-[#cdd6f4] truncate">Forest Path</h3>
+                            <div class="flex flex-wrap gap-1 mt-1">
+                                <span class="text-[10px] px-1.5 py-0.5 rounded-full bg-[#45475a] text-[#cdd6f4]">#forest</span>
+                                <span class="text-[10px] px-1.5 py-0.5 rounded-full bg-[#45475a] text-[#cdd6f4]">#nature</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-auto py-4 bg-[#181825] text-[#6c7086] text-xs">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between">
+                <span>&copy; 2024 Walle</span>
+                <div class="flex items-center gap-4">
+                    <a href="/terms" class="hover:text-[#cdd6f4]">Terms</a>
+                    <a href="/privacy" class="hover:text-[#cdd6f4]">Privacy</a>
+                    <a href="/tos" class="hover:text-[#cdd6f4]">ToS</a>
+                    <a href="/contact" class="hover:text-[#cdd6f4]">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
