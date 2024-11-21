@@ -2,7 +2,10 @@
 <html lang="en" class="bg-mocha-base">
 <head>
     @@include('../components/meta.html')
-    <title>WallpaperAI - Beautiful Wallpapers Collection</title>
+    <title>Minimal Nature Sunset - Mobile Wallpaper</title>
+    <meta property="og:title" content="Minimal Nature Sunset - Mobile Wallpaper">
+    <meta property="og:description" content="Download this beautiful minimal nature sunset mobile wallpaper (1080x2340)">
+    <meta property="og:image" content="https://picsum.photos/1080/1920">
     <link rel="stylesheet" href="../css/app.min.css">
     <script src="https://unpkg.com/lucide@latest" crossorigin="anonymous" defer></script>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" crossorigin="anonymous" defer></script>
@@ -20,26 +23,22 @@
     </aside>
 
     <!-- Main Content -->
-    <main id="main-content" class="md:ml-16 p-4" role="main" itemscope itemtype="http://schema.org/WebPage">
-        <h1 class="sr-only">WallpaperAI - Beautiful Wallpapers Collection</h1>
-        
-        <!-- Search and Tags Section -->
-        <section aria-label="Search and Filters" class="mb-4">
-            <div class="space-y-4">
-                @@include('../components/search.html')
-                @@include('../components/trending-tags.html')
-            </div>
-        </section>
-
-        <!-- Wallpaper Gallery Section -->
-        <section aria-label="Wallpaper Gallery" class="mb-2">
-            @@include('../components/wallpaper-grid.html')
-        </section>
-
-        <!-- Pagination Section -->
-        <nav aria-label="Pagination" class="mt-2">
-            @@include('../components/pagination.html')
+    <main id="main-content" class="md:ml-16 p-4" role="main">
+        <!-- Simple Breadcrumb -->
+        <nav aria-label="Breadcrumb" class="mb-3">
+            <ol class="flex items-center space-x-2 text-sm">
+                <li>
+                    <a href="/" class="text-mocha-overlay0 hover:text-mocha-text transition-colors duration-200">Home</a>
+                </li>
+                <li class="text-mocha-overlay0">
+                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                </li>
+                <li class="text-mocha-text">Minimal Nature Sunset</li>
+            </ol>
         </nav>
+
+        <!-- Wallpaper Details -->
+        @@include('../components/wallpaper-details.html')
     </main>
 
     @@include('../components/footer.html')
