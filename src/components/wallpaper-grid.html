@@ -1,65 +1,56 @@
 <!-- Wallpaper Grid -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
-    <!-- Wallpaper Card 1 -->
-    <div class="group relative overflow-hidden rounded-lg aspect-[2/3] bg-mocha-surface0 hover:scale-[1.02] transition-transform duration-300">
-        <img src="https://picsum.photos/600/900" alt="Nature Wallpaper" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div class="absolute bottom-0 left-0 right-0 p-4">
-                <h3 class="text-white font-medium truncate">Beautiful Nature</h3>
-                <div class="flex items-center justify-between mt-2">
-                    <div class="flex items-center gap-2">
-                        <button class="text-white hover:text-mocha-mauve" aria-label="Like">
-                            <i data-lucide="heart" class="w-5 h-5"></i>
-                        </button>
-                        <span class="text-white text-sm">2.5k</span>
-                    </div>
-                    <button class="text-white hover:text-mocha-mauve" aria-label="Download">
-                        <i data-lucide="download" class="w-5 h-5"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
+<section itemscope itemtype="http://schema.org/ImageGallery" class="w-full max-w-7xl p-5 pb-10 mx-auto mb-10 gap-5 columns-1 sm:columns-3 space-y-5">
+    <!-- Wallpaper Item 1 -->
+    <figure class="rounded-sm relative group" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+        <meta itemprop="fileFormat" content="image/webp">
+        <link itemprop="contentUrl" href="https://picsum.photos/601/900">
+        <meta itemprop="license" content="https://creativecommons.org/licenses/publicdomain/">
+        <a href="#" rel="noopener" itemprop="url">
+            <img class="rounded-sm mx-auto w-full" 
+                 src="https://picsum.photos/601/900" 
+                 alt="Beautiful Nature"
+                 loading="lazy"
+                 itemprop="thumbnailUrl">
+            <figcaption itemprop="caption description" 
+                       class="opacity-0 group-hover:opacity-100 duration-300 absolute inset-0 z-10 flex justify-center items-end text-sm bg-gradient-to-t from-black text-white p-4">
+                <span class="truncate">Beautiful Nature</span>
+            </figcaption>
+        </a>
+    </figure>
 
-    <!-- Wallpaper Card 2 -->
-    <div class="group relative overflow-hidden rounded-lg aspect-[2/3] bg-mocha-surface0 hover:scale-[1.02] transition-transform duration-300">
-        <img src="https://picsum.photos/601/900" alt="Abstract Art" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div class="absolute bottom-0 left-0 right-0 p-4">
-                <h3 class="text-white font-medium truncate">Abstract Art</h3>
-                <div class="flex items-center justify-between mt-2">
-                    <div class="flex items-center gap-2">
-                        <button class="text-white hover:text-mocha-mauve" aria-label="Like">
-                            <i data-lucide="heart" class="w-5 h-5"></i>
-                        </button>
-                        <span class="text-white text-sm">1.8k</span>
-                    </div>
-                    <button class="text-white hover:text-mocha-mauve" aria-label="Download">
-                        <i data-lucide="download" class="w-5 h-5"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- Wallpaper Item 2 -->
+    <figure class="rounded-sm relative group" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+        <meta itemprop="fileFormat" content="image/webp">
+        <link itemprop="contentUrl" href="https://picsum.photos/602/900">
+        <meta itemprop="license" content="https://creativecommons.org/licenses/publicdomain/">
+        <a href="#" rel="noopener" itemprop="url">
+            <img class="rounded-sm mx-auto w-full" 
+                 src="https://picsum.photos/602/900" 
+                 alt="Abstract Art"
+                 loading="lazy"
+                 itemprop="thumbnailUrl">
+            <figcaption itemprop="caption description" 
+                       class="opacity-0 group-hover:opacity-100 duration-300 absolute inset-0 z-10 flex justify-center items-end text-sm bg-gradient-to-t from-black text-white p-4">
+                <span class="truncate">Abstract Art</span>
+            </figcaption>
+        </a>
+    </figure>
 
-    <!-- Wallpaper Card 3 -->
-    <div class="group relative overflow-hidden rounded-lg aspect-[2/3] bg-mocha-surface0 hover:scale-[1.02] transition-transform duration-300">
-        <img src="https://picsum.photos/602/900" alt="City Lights" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div class="absolute bottom-0 left-0 right-0 p-4">
-                <h3 class="text-white font-medium truncate">City Lights</h3>
-                <div class="flex items-center justify-between mt-2">
-                    <div class="flex items-center gap-2">
-                        <button class="text-white hover:text-mocha-mauve" aria-label="Like">
-                            <i data-lucide="heart" class="w-5 h-5"></i>
-                        </button>
-                        <span class="text-white text-sm">3.2k</span>
-                    </div>
-                    <button class="text-white hover:text-mocha-mauve" aria-label="Download">
-                        <i data-lucide="download" class="w-5 h-5"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+    <!-- Wallpaper Item 3 -->
+    <figure class="rounded-sm relative group" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+        <meta itemprop="fileFormat" content="image/webp">
+        <link itemprop="contentUrl" href="https://picsum.photos/603/900">
+        <meta itemprop="license" content="https://creativecommons.org/licenses/publicdomain/">
+        <a href="#" rel="noopener" itemprop="url">
+            <img class="rounded-sm mx-auto w-full" 
+                 src="https://picsum.photos/603/900" 
+                 alt="City Lights"
+                 loading="lazy"
+                 itemprop="thumbnailUrl">
+            <figcaption itemprop="caption description" 
+                       class="opacity-0 group-hover:opacity-100 duration-300 absolute inset-0 z-10 flex justify-center items-end text-sm bg-gradient-to-t from-black text-white p-4">
+                <span class="truncate">City Lights</span>
+            </figcaption>
+        </a>
+    </figure>
+</section>

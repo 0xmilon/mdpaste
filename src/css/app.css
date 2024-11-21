@@ -12,4 +12,7 @@
   .container {
     @apply mx-auto px-4 max-w-7xl;
   }
+  .cover-img-fix {
+    display: none;
+  }
 }

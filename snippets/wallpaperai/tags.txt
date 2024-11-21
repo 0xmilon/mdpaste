@@ -1,0 +1,17 @@
+<ul class="flex space-x-4 nav-list px-2 pr-2 md:p-0">
+<li>🔥 TRENDING</li>
+<li><a href="#" class="hover:underline">Memes</a></li>
+<li><a href="#" class="hover:underline">Funny</a></li>
+<li><a href="#" class="hover:underline">Celebrity</a></li>
+<li><a href="#" class="hover:underline">Pics</a></li>
+<li><a href="#" class="hover:underline">Sports</a></li>
+<li><a href="#" class="hover:underline">Business</a></li>
+<li><a href="#" class="hover:underline">Finance</a></li>
+<li><a href="#" class="hover:underline">Technology</a></li>
+<li><a href="#" class="hover:underline">Life</a></li>
+<li><a href="#" class="hover:underline">Travel</a></li>
+<li><a href="#" class="hover:underline">Health</a></li>
+<li><a href="#" class="hover:underline">Anime</a></li>
+<li><a href="#" class="hover:underline">AI</a></li>
+<li><a href="#" class="hover:underline">Crypto</a></li>
+</ul>
