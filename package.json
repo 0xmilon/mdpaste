@@ -1,16 +1,16 @@
 {
-  "name": "tailwind-boilerplate",
+  "name": "wallpaperai",
   "version": "1.0.0",
-  "description": "A modern, production-ready frontend workflow with Tailwind CSS and Gulp",
-  "author": "Milon Biswas",
+  "description": "A modern, AI-powered wallpaper discovery platform with Pinterest-style layout",
+  "author": "Your Name",
   "license": "MIT",
-  "homepage": "https://github.com/0xmilon/tailwind-boilerplate",
+  "homepage": "https://github.com/yourusername/wallpaperai",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/0xmilon/tailwind-boilerplate.git"
+    "url": "git+https://github.com/yourusername/wallpaperai.git"
   },
   "bugs": {
-    "url": "https://github.com/0xmilon/tailwind-boilerplate/issues"
+    "url": "https://github.com/yourusername/wallpaperai/issues"
   },
   "scripts": {
     "dev": "gulp",
@@ -19,7 +19,9 @@
     "format": "biome format --write .",
     "lint": "biome lint .",
     "check": "biome check --apply .",
-    "update-deps": "npx npm-check-updates -u && npm install"
+    "update-deps": "npx npm-check-updates -u && npm install",
+    "new:feature": "node scripts/create-feature.js",
+    "new:template": "node scripts/create-template.js"
   },
   "dependencies": {
     "tailwindcss": "^3.4.15"
