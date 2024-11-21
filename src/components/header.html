@@ -3,70 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Discover and download beautiful wallpapers - Your source for high-quality desktop and mobile backgrounds">
-    <meta name="keywords" content="wallpapers, backgrounds, desktop wallpapers, mobile wallpapers, HD wallpapers">
-    <title>Walle - Beautiful Wallpapers Collection</title>
+    <title>Modern Tailwind Template</title>
     <link rel="stylesheet" href="./css/app.min.css">
     <script src="./js/app.min.js" defer></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
-<body class="h-full bg-mocha-base text-mocha-text">
-    <!-- Desktop Left Navigation -->
-    <nav class="hidden md:block fixed left-0 top-0 h-full w-12 bg-mocha-surface0/80 backdrop-blur-lg border-r border-mocha-surface1">
-        <div class="flex flex-col h-full py-4">
-            <!-- Logo -->
-            <div class="px-1 mb-8">
-                <a href="/" class="block p-2 rounded-lg text-mocha-mauve hover:bg-mocha-surface1" aria-label="Home">
-                    <i data-lucide="image" class="w-6 h-6"></i>
-                </a>
-            </div>
-            
-            <!-- Navigation Links (Middle) -->
-            <div class="flex-1 flex flex-col items-center space-y-1 px-1">
-                <a href="/" class="p-2 rounded-lg bg-mocha-surface1 text-mocha-blue" aria-label="Home">
-                    <i data-lucide="home" class="w-5 h-5"></i>
-                </a>
-                <a href="/trending" class="p-2 rounded-lg text-mocha-subtext hover:bg-mocha-surface1 hover:text-mocha-blue" aria-label="Trending">
-                    <i data-lucide="trending-up" class="w-5 h-5"></i>
-                </a>
-                <a href="/new" class="p-2 rounded-lg text-mocha-subtext hover:bg-mocha-surface1 hover:text-mocha-blue" aria-label="New">
-                    <i data-lucide="sparkles" class="w-5 h-5"></i>
-                </a>
-                <a href="/top" class="p-2 rounded-lg text-mocha-subtext hover:bg-mocha-surface1 hover:text-mocha-blue" aria-label="Top">
-                    <i data-lucide="star" class="w-5 h-5"></i>
-                </a>
-                <button class="p-2 rounded-lg text-mocha-subtext hover:bg-mocha-surface1 hover:text-mocha-blue" aria-label="Search">
-                    <i data-lucide="search" class="w-5 h-5"></i>
-                </button>
-            </div>
-
-            <!-- Upload Button -->
-            <div class="px-1 mt-auto">
-                <button class="p-2.5 w-full bg-mocha-mauve text-mocha-base rounded-lg hover:bg-mocha-lavender transition-colors" aria-label="Upload Wallpaper">
-                    <i data-lucide="upload" class="w-5 h-5 mx-auto"></i>
+<body class="h-full bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+<header class="bg-white dark:bg-neutral-900 shadow dark:shadow-neutral-800">
+    <nav class="container mx-auto px-4">
+        <div class="flex items-center justify-between h-16">
+            <a href="/" class="text-xl font-bold text-primary-600 dark:text-primary-400">Logo</a>
+            <div class="flex items-center space-x-6">
+                <ul class="flex space-x-6">
+                    <li><a href="/" class="hover:text-primary-600 dark:hover:text-primary-400">Home</a></li>
+                    <li><a href="/about" class="hover:text-primary-600 dark:hover:text-primary-400">About</a></li>
+                    <li><a href="/contact" class="hover:text-primary-600 dark:hover:text-primary-400">Contact</a></li>
+                </ul>
+                <button 
+                    id="theme-toggle"
+                    class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700"
+                    aria-label="Toggle dark mode"
+                >
+                    <svg id="sun-icon" class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"/>
+                    </svg>
+                    <svg id="moon-icon" class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+                    </svg>
                 </button>
             </div>
         </div>
     </nav>
-
-    <!-- Mobile Header -->
-    <header class="md:hidden sticky top-0 z-50 bg-mocha-surface0/80 backdrop-blur-lg border-b border-mocha-surface1">
-        <nav class="container mx-auto px-4 h-16 flex items-center justify-between">
-            <!-- Logo -->
-            <a href="/" class="flex items-center gap-2 text-mocha-mauve">
-                <i data-lucide="image" class="w-6 h-6"></i>
-                <span class="font-bold text-lg">Walle</span>
-            </a>
-
-            <!-- Mobile Navigation -->
-            <button class="text-mocha-text hover:text-mocha-mauve transition-colors" aria-label="Menu">
-                <i data-lucide="menu" class="w-6 h-6"></i>
-            </button>
-        </nav>
-    </header>
-
-    <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
-    </script>
+</header>

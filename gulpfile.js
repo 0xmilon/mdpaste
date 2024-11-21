@@ -1,11 +1,56 @@
 const gulp = require('gulp');
-const paths = require('./gulp/config');
+const postcss = require('gulp-postcss');
+const fileinclude = require('gulp-file-include');
+const terser = require('gulp-terser');
+const browserSync = require('browser-sync').create();
+const rename = require('gulp-rename');
 
-// Import tasks
-const css = require('./gulp/tasks/styles');
-const js = require('./gulp/tasks/scripts');
-const html = require('./gulp/tasks/templates');
-const { serve, getBrowserSync } = require('./gulp/tasks/serve');
+// File paths
+const paths = {
+  css: {
+    src: 'src/css/**/*.css',
+    dest: 'dist/css/'
+  },
+  js: {
+    src: 'src/js/**/*.js',
+    dest: 'dist/js/'
+  },
+  html: {
+    src: 'src/pages/**/*.html',
+    dest: 'dist/'
+  },
+  components: 'src/components/**/*.html',
+  layouts: 'src/layouts/**/*.html'
+};
+
+// CSS task
+function css() {
+  return gulp.src(paths.css.src)
+    .pipe(postcss())
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(gulp.dest(paths.css.dest))
+    .pipe(browserSync.stream());
+}
+
+// JavaScript task
+function js() {
+  return gulp.src(paths.js.src)
+    .pipe(terser())
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(gulp.dest(paths.js.dest))
+    .pipe(browserSync.stream());
+}
+
+// HTML task with component inclusion
+function html() {
+  return gulp.src(paths.html.src)
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(gulp.dest(paths.html.dest))
+    .pipe(browserSync.stream());
+}
 
 // Clean dist folder
 async function clean() {
@@ -13,13 +58,25 @@ async function clean() {
   return del.deleteSync(['dist/**/*']);
 }
 
+// BrowserSync server
+function serve(done) {
+  browserSync.init({
+    server: {
+      baseDir: './dist'
+    },
+    port: 3000,
+    open: true,
+    notify: false
+  });
+  done();
+}
+
 // Watch files
 function watchFiles(done) {
-  const browserSync = getBrowserSync();
-
-  gulp.watch(paths.css.src, css).on('change', browserSync.reload);
-  gulp.watch(paths.js.src, js).on('change', browserSync.reload);
-  gulp.watch([paths.html.src, paths.components, paths.layouts], html).on('change', browserSync.reload);
+  gulp.watch(paths.css.src, css);
+  gulp.watch(paths.js.src, js);
+  gulp.watch([paths.html.src, paths.components, paths.layouts], html);
+  gulp.watch('dist/**/*').on('change', browserSync.reload);
   done();
 }
 
