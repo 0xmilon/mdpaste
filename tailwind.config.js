@@ -1,7 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js}"],
   darkMode: 'class',
+  content: [
+    "./src/**/*.{html,js}",
+  ],
   theme: {
     extend: {
       container: {
@@ -62,41 +64,31 @@ module.exports = {
           peach: '#fab387'
         }
       },
-      typography: ({ theme }) => ({
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: '100%',
+            color: 'inherit',
+          },
+        },
         neutral: {
           css: {
-            '--tw-prose-body': theme('colors.neutral.700'),
-            '--tw-prose-headings': theme('colors.neutral.900'),
-            '--tw-prose-lead': theme('colors.neutral.600'),
-            '--tw-prose-links': theme('colors.neutral.900'),
-            '--tw-prose-bold': theme('colors.neutral.900'),
-            '--tw-prose-counters': theme('colors.neutral.500'),
-            '--tw-prose-bullets': theme('colors.neutral.300'),
-            '--tw-prose-hr': theme('colors.neutral.200'),
-            '--tw-prose-quotes': theme('colors.neutral.900'),
-            '--tw-prose-quote-borders': theme('colors.neutral.200'),
-            '--tw-prose-captions': theme('colors.neutral.500'),
-            '--tw-prose-code': theme('colors.neutral.900'),
-            '--tw-prose-pre-code': theme('colors.neutral.200'),
-            '--tw-prose-pre-bg': theme('colors.neutral.800'),
-            '--tw-prose-th-borders': theme('colors.neutral.300'),
-            '--tw-prose-td-borders': theme('colors.neutral.200'),
-            '--tw-prose-invert-body': theme('colors.neutral.300'),
-            '--tw-prose-invert-headings': theme('colors.white'),
-            '--tw-prose-invert-lead': theme('colors.neutral.400'),
-            '--tw-prose-invert-links': theme('colors.white'),
-            '--tw-prose-invert-bold': theme('colors.white'),
-            '--tw-prose-invert-counters': theme('colors.neutral.400'),
-            '--tw-prose-invert-bullets': theme('colors.neutral.600'),
-            '--tw-prose-invert-hr': theme('colors.neutral.700'),
-            '--tw-prose-invert-quotes': theme('colors.neutral.100'),
-            '--tw-prose-invert-quote-borders': theme('colors.neutral.700'),
-            '--tw-prose-invert-captions': theme('colors.neutral.400'),
-            '--tw-prose-invert-code': theme('colors.white'),
-            '--tw-prose-invert-pre-code': theme('colors.neutral.300'),
-            '--tw-prose-invert-pre-bg': 'rgb(0 0 0 / 50%)',
-            '--tw-prose-invert-th-borders': theme('colors.neutral.600'),
-            '--tw-prose-invert-td-borders': theme('colors.neutral.700'),
+            '--tw-prose-body': 'inherit',
+            '--tw-prose-headings': 'inherit',
+            '--tw-prose-lead': 'inherit',
+            '--tw-prose-links': 'inherit',
+            '--tw-prose-bold': 'inherit',
+            '--tw-prose-counters': 'inherit',
+            '--tw-prose-bullets': 'inherit',
+            '--tw-prose-hr': 'inherit',
+            '--tw-prose-quotes': 'inherit',
+            '--tw-prose-quote-borders': 'inherit',
+            '--tw-prose-captions': 'inherit',
+            '--tw-prose-code': 'inherit',
+            '--tw-prose-pre-code': 'inherit',
+            '--tw-prose-pre-bg': 'inherit',
+            '--tw-prose-th-borders': 'inherit',
+            '--tw-prose-td-borders': 'inherit',
           },
         },
         slate: {
@@ -135,10 +127,10 @@ module.exports = {
             '--tw-prose-invert-td-borders': theme('colors.slate.700'),
           },
         }
-      })
+      }
     }
   },
   plugins: [
-    require('@tailwindcss/typography')
-  ]
+    require('@tailwindcss/typography'),
+  ],
 }

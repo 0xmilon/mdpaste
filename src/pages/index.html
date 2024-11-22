@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" class="bg-mocha-base">
+<html lang="en" class="dark">
 <head>
     @@include('../components/meta.html')
     <title>WallpaperAI - Beautiful Wallpapers Collection</title>
     <link rel="stylesheet" href="../css/app.min.css">
     <script src="https://unpkg.com/lucide@latest" crossorigin="anonymous" defer></script>
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" crossorigin="anonymous" defer></script>
     <script src="../js/app.min.js" defer></script>
 </head>
-<body class="min-h-screen text-mocha-text antialiased">
+<body class="bg-neutral-950 text-neutral-100 antialiased min-h-screen flex flex-col">
     <!-- Skip to main content -->
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:p-4 focus:bg-mocha-base focus:text-mocha-text focus:z-50">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:p-4 focus:bg-neutral-950 focus:text-neutral-100 focus:z-50">
         Skip to main content
     </a>
 
@@ -20,26 +19,28 @@
     </aside>
 
     <!-- Main Content -->
-    <main id="main-content" class="md:ml-16 p-4" role="main" itemscope itemtype="http://schema.org/WebPage">
-        <h1 class="sr-only">WallpaperAI - Beautiful Wallpapers Collection</h1>
-        
-        <!-- Search and Tags Section -->
-        <section aria-label="Search and Filters" class="mb-4">
-            <div class="space-y-4">
-                @@include('../components/search.html')
-                @@include('../components/trending-tags.html')
+    <main id="main-content" class="flex-1 md:ml-16" role="main">
+        <div class="max-w-3xl mx-auto px-4 py-8">
+            <div class="prose prose-neutral dark:prose-invert mx-auto">
+                <!-- Search and Tags Section -->
+                <section aria-label="Search and Filters" class="mb-4">
+                    <div class="space-y-4">
+                        @@include('../components/search.html')
+                        @@include('../components/trending-tags.html')
+                    </div>
+                </section>
+
+                <!-- Wallpaper Gallery Section -->
+                <section aria-label="Wallpaper Gallery" class="mb-2">
+                    @@include('../components/wallpaper-grid.html')
+                </section>
+
+                <!-- Pagination Section -->
+                <nav aria-label="Pagination" class="mt-2">
+                    @@include('../components/pagination.html')
+                </nav>
             </div>
-        </section>
-
-        <!-- Wallpaper Gallery Section -->
-        <section aria-label="Wallpaper Gallery" class="mb-2">
-            @@include('../components/wallpaper-grid.html')
-        </section>
-
-        <!-- Pagination Section -->
-        <nav aria-label="Pagination" class="mt-2">
-            @@include('../components/pagination.html')
-        </nav>
+        </div>
     </main>
 
     @@include('../components/footer.html')
