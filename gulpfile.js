@@ -25,8 +25,14 @@ const paths = {
 
 // CSS task
 function css() {
+  const postcssPlugins = [
+    require('tailwindcss'),
+    require('autoprefixer'),
+    require('cssnano')
+  ];
+
   return gulp.src(paths.css.src)
-    .pipe(postcss())
+    .pipe(postcss(postcssPlugins))
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest(paths.css.dest))
     .pipe(browserSync.stream());
@@ -54,8 +60,8 @@ function html() {
 
 // Clean dist folder
 async function clean() {
-  const del = await import('del');
-  return del.deleteSync(['dist/**/*']);
+  const { deleteAsync } = await import('del');
+  await deleteAsync('dist/**/*');
 }
 
 // BrowserSync server
@@ -65,8 +71,7 @@ function serve(done) {
       baseDir: './dist'
     },
     port: 3000,
-    open: true,
-    notify: false
+    open: false
   });
   done();
 }

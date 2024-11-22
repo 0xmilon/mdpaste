@@ -1,26 +1,26 @@
 <!-- Desktop Left Navigation -->
-<nav class="hidden md:block fixed left-0 top-0 h-full w-16 bg-mocha-surface0/80 backdrop-blur-lg border-r border-mocha-surface1 z-50">
+<nav class="hidden lg:block fixed left-0 top-0 h-full w-16 bg-mocha-surface0/80 backdrop-blur-lg border-r border-mocha-surface1 z-50">
     <div class="flex flex-col h-full py-4">
         <!-- Logo -->
         <div class="px-2 mb-8">
-            <a href="/" class="block p-2 rounded-lg text-mocha-mauve" aria-label="Home">
+            <a href="/" class="block p-2 rounded-lg text-mocha-mauve hover:bg-mocha-surface1/50" aria-label="Home">
                 <i data-lucide="file-text" class="w-8 h-8"></i>
             </a>
         </div>
         
         <!-- Navigation Links (Middle) -->
         <div class="flex-1 px-2 space-y-4">
-            <button id="new-doc" class="block w-full p-2 rounded-lg text-mocha-text hover:text-mocha-mauve" aria-label="New Document">
+            <button id="new-doc" class="block w-full p-2 rounded-lg text-mocha-text hover:text-mocha-mauve hover:bg-mocha-surface1/50" aria-label="New Document">
                 <i data-lucide="file-plus" class="w-7 h-7"></i>
             </button>
-            <button id="save-doc" class="block w-full p-2 rounded-lg text-mocha-text hover:text-mocha-mauve" aria-label="Save Document">
+            <button id="save-doc" class="block w-full p-2 rounded-lg text-mocha-text hover:text-mocha-mauve hover:bg-mocha-surface1/50" aria-label="Save Document">
                 <i data-lucide="save" class="w-7 h-7"></i>
             </button>
         </div>
 
         <!-- Theme Toggle -->
         <div class="px-2">
-            <button id="theme-toggle" class="block w-full p-2 rounded-lg text-mocha-text hover:text-mocha-mauve" aria-label="Toggle Theme">
+            <button id="theme-toggle" class="block w-full p-2 rounded-lg text-mocha-text hover:text-mocha-mauve hover:bg-mocha-surface1/50" aria-label="Toggle Theme">
                 <i data-lucide="moon" class="w-7 h-7 dark:hidden"></i>
                 <i data-lucide="sun" class="w-7 h-7 hidden dark:block"></i>
             </button>
@@ -29,20 +29,22 @@
 </nav>
 
 <!-- Mobile Bottom Navigation -->
-<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-mocha-surface0/80 backdrop-blur-lg border-t border-mocha-surface1 z-50">
-    <div class="flex justify-around py-2">
-        <a href="/" class="p-2 text-mocha-mauve" aria-label="Home">
-            <i data-lucide="file-text" class="w-7 h-7"></i>
-        </a>
-        <button id="mobile-new" class="p-2 text-mocha-text" aria-label="New Document">
-            <i data-lucide="file-plus" class="w-7 h-7"></i>
-        </button>
-        <button id="mobile-save" class="p-2 text-mocha-text" aria-label="Save Document">
-            <i data-lucide="save" class="w-7 h-7"></i>
-        </button>
-        <button id="mobile-theme" class="p-2 text-mocha-text" aria-label="Toggle Theme">
-            <i data-lucide="moon" class="w-7 h-7 dark:hidden"></i>
-            <i data-lucide="sun" class="w-7 h-7 hidden dark:block"></i>
-        </button>
+<nav class="lg:hidden fixed bottom-0 left-0 right-0 bg-mocha-surface0/80 backdrop-blur-lg border-t border-mocha-surface1 z-50 safe-bottom">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-around items-center h-16">
+            <a href="/" class="p-3 rounded-lg text-mocha-mauve hover:bg-mocha-surface1/50" aria-label="Home">
+                <i data-lucide="file-text" class="w-6 h-6"></i>
+            </a>
+            <button id="mobile-new" class="p-3 rounded-lg text-mocha-text hover:text-mocha-mauve hover:bg-mocha-surface1/50" aria-label="New Document">
+                <i data-lucide="file-plus" class="w-6 h-6"></i>
+            </button>
+            <button id="mobile-save" class="p-3 rounded-lg text-mocha-text hover:text-mocha-mauve hover:bg-mocha-surface1/50" aria-label="Save Document">
+                <i data-lucide="save" class="w-6 h-6"></i>
+            </button>
+            <button id="mobile-theme" class="p-3 rounded-lg text-mocha-text hover:text-mocha-mauve hover:bg-mocha-surface1/50" aria-label="Toggle Theme">
+                <i data-lucide="moon" class="w-6 h-6 dark:hidden"></i>
+                <i data-lucide="sun" class="w-6 h-6 hidden dark:block"></i>
+            </button>
+        </div>
     </div>
 </nav>

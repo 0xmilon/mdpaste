@@ -10,65 +10,32 @@ module.exports = {
         center: true,
         padding: '1rem'
       },
-      colors: {
-        primary: {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8',
-          500: '#0ea5e9',
-          600: '#0284c7',
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0c4a6e',
-          950: '#082f49',
-        },
-        neutral: {
-          50: '#fafafa',
-          100: '#f5f5f5',
-          200: '#e5e5e5',
-          300: '#d4d4d4',
-          400: '#a3a3a3',
-          500: '#737373',
-          600: '#525252',
-          700: '#404040',
-          800: '#262626',
-          900: '#171717',
-          950: '#0a0a0a',
-        },
-        slate: {
-          50: '#f8fafc',
-          100: '#f1f5f9',
-          200: '#e2e8f0',
-          300: '#cbd5e1',
-          400: '#94a3b8',
-          500: '#64748b',
-          600: '#475569',
-          700: '#334155',
-          800: '#1e293b',
-          900: '#0f172a',
-          950: '#04081a',
-        },
-        mocha: {
-          base: '#1e1e2e',
-          surface0: '#313244',
-          surface1: '#45475a',
-          text: '#cdd6f4',
-          subtext: '#a6adc8',
-          overlay0: '#6c7086',
-          blue: '#89b4fa',
-          lavender: '#b4befe',
-          mauve: '#cba6f7',
-          red: '#f38ba8',
-          peach: '#fab387'
-        }
+      fontFamily: {
+        'noto': ['Noto Serif', 'serif'],
       },
-      typography: {
+      typography: ({ theme }) => ({
         DEFAULT: {
           css: {
-            maxWidth: '100%',
-            color: 'inherit',
+            maxWidth: '65ch',
+            fontSize: theme('fontSize.xl[0]'),
+            lineHeight: theme('fontSize.xl[1].lineHeight'),
+            p: {
+              marginTop: '1.5em',
+              marginBottom: '1.5em',
+            },
+            'figure': {
+              margin: '3rem auto',
+            },
+            'figure > img': {
+              borderRadius: '0.5rem',
+              width: '100%',
+            },
+            'figure > figcaption': {
+              textAlign: 'center',
+              color: 'rgb(163 163 163)',
+              fontSize: '0.875rem',
+              marginTop: '0.75rem',
+            },
           },
         },
         neutral: {
@@ -105,8 +72,8 @@ module.exports = {
             '--tw-prose-quote-borders': theme('colors.slate.200'),
             '--tw-prose-captions': theme('colors.slate.500'),
             '--tw-prose-code': theme('colors.slate.900'),
-            '--tw-prose-pre-code': theme('colors.slate.200'),
-            '--tw-prose-pre-bg': theme('colors.slate.800'),
+            '--tw-prose-pre-code': theme('colors.slate.900'),
+            '--tw-prose-pre-bg': theme('colors.slate.50'),
             '--tw-prose-th-borders': theme('colors.slate.300'),
             '--tw-prose-td-borders': theme('colors.slate.200'),
             '--tw-prose-invert-body': theme('colors.slate.300'),
@@ -126,11 +93,65 @@ module.exports = {
             '--tw-prose-invert-th-borders': theme('colors.slate.600'),
             '--tw-prose-invert-td-borders': theme('colors.slate.700'),
           },
-        }
-      }
-    }
+        },
+      }),
+    },
   },
   plugins: [
     require('@tailwindcss/typography'),
   ],
+  colors: {
+    primary: {
+      50: '#f0f9ff',
+      100: '#e0f2fe',
+      200: '#bae6fd',
+      300: '#7dd3fc',
+      400: '#38bdf8',
+      500: '#0ea5e9',
+      600: '#0284c7',
+      700: '#0369a1',
+      800: '#075985',
+      900: '#0c4a6e',
+      950: '#082f49',
+    },
+    neutral: {
+      50: '#fafafa',
+      100: '#f5f5f5',
+      200: '#e5e5e5',
+      300: '#d4d4d4',
+      400: '#a3a3a3',
+      500: '#737373',
+      600: '#525252',
+      700: '#404040',
+      800: '#262626',
+      900: '#171717',
+      950: '#0a0a0a',
+    },
+    slate: {
+      50: '#f8fafc',
+      100: '#f1f5f9',
+      200: '#e2e8f0',
+      300: '#cbd5e1',
+      400: '#94a3b8',
+      500: '#64748b',
+      600: '#475569',
+      700: '#334155',
+      800: '#1e293b',
+      900: '#0f172a',
+      950: '#04081a',
+    },
+    mocha: {
+      base: '#1e1e2e',
+      surface0: '#313244',
+      surface1: '#45475a',
+      text: '#cdd6f4',
+      subtext: '#a6adc8',
+      overlay0: '#6c7086',
+      blue: '#89b4fa',
+      lavender: '#b4befe',
+      mauve: '#cba6f7',
+      red: '#f38ba8',
+      peach: '#fab387'
+    }
+  },
 }

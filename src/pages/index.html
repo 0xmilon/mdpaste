@@ -2,56 +2,43 @@
 <html lang="en" class="dark">
 <head>
     @@include('../components/meta.html')
-    <title>WallpaperAI - Beautiful Wallpapers Collection</title>
-    <link rel="stylesheet" href="../css/app.min.css">
-    <script src="https://unpkg.com/lucide@latest" crossorigin="anonymous" defer></script>
-    <script src="../js/app.min.js" defer></script>
+    <title>Write · Textpad</title>
+    @@include('../components/styles.html')
 </head>
-<body class="bg-neutral-950 text-neutral-100 antialiased min-h-screen flex flex-col">
-    <!-- Skip to main content -->
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:p-4 focus:bg-neutral-950 focus:text-neutral-100 focus:z-50">
-        Skip to main content
-    </a>
+<body class="bg-neutral-950 text-neutral-200 antialiased">
+    <main class="pb-16">
+        <div class="max-w-2xl mx-auto px-4 py-8">
+            <form action="/publish" method="POST">
+                <!-- Title and Publish -->
+                <div class="mb-6 flex items-center justify-between gap-4">
+                    <input type="text" 
+                           name="title"
+                           placeholder="Title"
+                           class="text-3xl font-bold bg-transparent outline-none placeholder-neutral-600 w-full focus:outline-none">
+                    <button type="submit" 
+                            class="text-sm text-neutral-400 hover:text-neutral-200 transition-colors px-3 py-1.5 border border-neutral-800 rounded-full hover:border-neutral-700">
+                        publish
+                    </button>
+                </div>
 
-    <!-- Sidebar Navigation -->
-    <aside role="navigation" aria-label="Main Navigation">
-        @@include('../components/sidebar.html')
-    </aside>
+                <!-- Author -->
+                <div class="mb-12">
+                    <input type="text" 
+                           name="author"
+                           placeholder="anonymous"
+                           class="text-sm text-neutral-400 bg-transparent outline-none placeholder-neutral-600 w-full focus:outline-none">
+                </div>
 
-    <!-- Main Content -->
-    <main id="main-content" class="flex-1 md:ml-16" role="main">
-        <div class="max-w-3xl mx-auto px-4 py-8">
-            <div class="prose prose-neutral dark:prose-invert mx-auto">
-                <!-- Search and Tags Section -->
-                <section aria-label="Search and Filters" class="mb-4">
-                    <div class="space-y-4">
-                        @@include('../components/search.html')
-                        @@include('../components/trending-tags.html')
-                    </div>
-                </section>
-
-                <!-- Wallpaper Gallery Section -->
-                <section aria-label="Wallpaper Gallery" class="mb-2">
-                    @@include('../components/wallpaper-grid.html')
-                </section>
-
-                <!-- Pagination Section -->
-                <nav aria-label="Pagination" class="mt-2">
-                    @@include('../components/pagination.html')
-                </nav>
-            </div>
+                <!-- Content -->
+                <div class="prose prose-neutral dark:prose-invert">
+                    <textarea name="content"
+                              placeholder="Your story..."
+                              class="bg-transparent outline-none min-h-[calc(100vh-20rem)] w-full placeholder-neutral-600 focus:outline-none resize-none"></textarea>
+                </div>
+            </form>
         </div>
     </main>
 
     @@include('../components/footer.html')
-
-    <script>
-        // Initialize Lucide icons
-        document.addEventListener('DOMContentLoaded', () => {
-            lucide.createIcons();
-            // Update year
-            document.getElementById('year').textContent = new Date().getFullYear();
-        });
-    </script>
 </body>
 </html>

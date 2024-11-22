@@ -12,20 +12,20 @@
     "update-deps": "npx npm-check-updates -u && npm install"
   },
   "dependencies": {
-    "tailwindcss": "^3.4.15"
+    "tailwindcss": "^3.4.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
-    "@tailwindcss/typography": "^0.5.15",
-    "autoprefixer": "^10.4.20",
-    "browser-sync": "^3.0.3",
-    "cssnano": "^7.0.6",
+    "@biomejs/biome": "1.4.1",
+    "@tailwindcss/typography": "^0.5.10",
+    "autoprefixer": "^10.4.16",
+    "browser-sync": "^2.29.3",
+    "cssnano": "^6.0.2",
     "del": "^7.1.0",
-    "gulp": "^5.0.0",
+    "gulp": "^4.0.2",
     "gulp-file-include": "^2.3.0",
-    "gulp-postcss": "^10.0.0",
+    "gulp-postcss": "^9.0.1",
     "gulp-rename": "^2.0.0",
     "gulp-terser": "^2.1.0",
-    "postcss": "^8.4.49"
+    "postcss": "^8.4.32"
   }
 }

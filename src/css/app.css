@@ -12,7 +12,37 @@
   .container {
     @apply mx-auto px-4 max-w-7xl;
   }
-  .cover-img-fix {
-    display: none;
+}
+
+@layer utilities {
+  .prose {
+    @apply text-xl max-w-2xl mx-auto;
+  }
+
+  .prose img {
+    @apply rounded-lg my-16 w-full;
+  }
+
+  .prose figcaption {
+    @apply mt-3 text-sm text-neutral-400 text-center;
+  }
+
+  .prose blockquote {
+    @apply pl-6 border-l-2 border-neutral-700 italic text-neutral-400;
+  }
+
+  .prose pre {
+    @apply p-4 bg-neutral-900 rounded-lg overflow-x-auto;
+  }
+
+  .prose code {
+    @apply text-sm font-mono text-neutral-300;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }
