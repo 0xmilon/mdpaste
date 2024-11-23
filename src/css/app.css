@@ -136,4 +136,9 @@
            focus:ring-offset-2 
            focus:ring-offset-neutral-900;
   }
+
+  /* Footer Link Spacing */
+  footer a {
+    @apply mx-0.5;
+  }
 }

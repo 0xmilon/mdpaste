@@ -4,73 +4,40 @@
     @@include('../components/meta.html')
     <title>Write · MDPaste</title>
     @@include('../components/styles.html')
-    <style type="text/tailwindcss">
-        @layer utilities {
-            footer a {
-                @apply mx-0.5;
-            }
-            .textarea-custom {
-                background-color: #262626;
-                border: 2px solid #171717;
-                box-shadow: 2px 2px 0 #0a0a0a;
-                border-radius: 4px;
-                color: #e5e5e5;
-                font-family: 'JetBrains Mono', monospace;
-            }
-            .textarea-custom:focus {
-                box-shadow: 3px 3px 0 #0a0a0a;
-            }
-            .btn-custom {
-                background-color: #262626;
-                border: 2px solid #171717;
-                box-shadow: 2px 2px 0 #0a0a0a;
-                border-radius: 4px;
-                color: #e5e5e5;
-                font-weight: 700;
-                font-family: 'JetBrains Mono', monospace;
-            }
-            .btn-custom:hover {
-                background-color: #404040;
-            }
-            .btn-custom:active {
-                box-shadow: 1px 1px 0 #0a0a0a;
-                transform: translate(1px, 1px);
-            }
-            .bg-neutral-900 {
-                background-color: #262626;
-            }
-        }
-    </style>
 </head>
 <body class="bg-neutral-900">
     <div class="flex flex-col min-h-screen">
         <div class="flex-grow max-w-screen-xl w-full mx-auto px-4">
             <main class="h-full pt-8">
-                <form method="post" class="flex flex-col h-full">
-                    <textarea 
-                        autofocus 
-                        class="w-full flex-grow outline-none p-8 resize-none font-mono text-sm textarea-custom transition-all"
-                        aria-label="Create Markdown Paste"
-                        name="paste"
-                        id="paste-content"
-                        placeholder="# Write your markdown here...
+                <div class="flex flex-col h-full">
+                    <div class="content-custom flex-grow">
+                        <form method="post" class="flex flex-col h-full">
+                            <textarea 
+                                autofocus 
+                                class="textarea-custom"
+                                aria-label="Create Markdown Paste"
+                                name="paste"
+                                id="paste-content"
+                                placeholder="# Write your markdown here...
 
 ## Features
 - Clean, distraction-free writing
 - Full markdown support
 - Anonymous sharing"
-                    ></textarea>
-                    <div class="mt-4 flex justify-end space-x-2">
-                        <a href="/history" class="px-4 py-2 text-sm btn-custom transition-all" title="History">⏱️</a>
-                        <a href="/random" class="px-4 py-2 text-sm btn-custom transition-all" title="Surprise Me">🎲</a>
-                        <button 
-                            type="submit" 
-                            class="px-4 py-2 text-sm uppercase btn-custom transition-all"
-                        >
-                            Create Paste
-                        </button>
+                            ></textarea>
+                            <div class="mt-4 flex justify-end space-x-2">
+                                <a href="/history" class="btn-custom" title="History">⏱️</a>
+                                <a href="/random" class="btn-custom" title="Surprise Me">🎲</a>
+                                <button 
+                                    type="submit" 
+                                    class="btn-custom"
+                                >
+                                    Create Paste
+                                </button>
+                            </div>
+                        </form>
                     </div>
-                </form>
+                </div>
             </main>
         </div>
         @@include('../components/footer.html')
