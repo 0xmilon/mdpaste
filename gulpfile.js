@@ -26,7 +26,6 @@ const paths = {
   assets: {
     src: [
       'src/assets/**/*',
-      'src/favicon.ico',
       'src/robots.txt',
       'src/site.webmanifest'
     ],
