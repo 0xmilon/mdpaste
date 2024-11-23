@@ -1,44 +1,39 @@
-# 🚀 Tailwind Boilerplate
+# 📝 MDPaste
 
-A modern, production-ready frontend workflow with Tailwind CSS and Gulp.
+A minimal, distraction-free Markdown pastebin platform focused on simplicity and user experience.
 
 ## ✨ Features
 
-- 🎨 **Modern Design System**
+- 🎯 **Focused Writing Experience**
+  - Clean, minimal interface
+  - Dark mode by default
+  - Full Markdown support
+  - Distraction-free environment
+
+- 🔒 **Privacy First**
+  - Anonymous sharing
+  - No user tracking
+  - No ads or analytics
+  - Client-side rendering
+
+- 🎨 **Modern Design**
   - Tailwind CSS v3.4.15
-  - Dark mode support with system preference detection
-  - Custom color schemes (neutral, slate)
-  - Typography plugin integration
-  - Responsive design patterns
+  - Responsive layout
+  - Beautiful typography
+  - Custom monospace font (JetBrains Mono)
 
-- 🛠️ **Advanced Build System**
-  - Gulp 5.0.0 workflow
-  - PostCSS processing
-  - JavaScript minification
-  - CSS optimization
-  - Live reload with BrowserSync
+- 🚀 **Performance**
+  - Minimal JavaScript
   - Component-based architecture
+  - Optimized build system
+  - Fast page loads
 
-- 🔧 **Development Tools**
-  - Biome JS for formatting and linting
-  - Source maps for debugging
-  - Hot module replacement
-  - NPM scripts for common tasks
-  - Automated dependency updates
-
-- 📦 **Production Ready**
-  - Minified assets
-  - Optimized builds
-  - Cache busting
-  - SEO friendly
-  - Performance optimized
-
-## 🚀 Quick Start
+## 🏃 Quick Start
 
 1. **Clone the repository**
    ```bash
-   git clone [your-repo-url]
-   cd boilerplate
+   git clone https://github.com/0xmilon/mdpaste.git
+   cd mdpaste
    ```
 
 2. **Install dependencies**
@@ -51,174 +46,61 @@ A modern, production-ready frontend workflow with Tailwind CSS and Gulp.
    npm run dev
    ```
 
-4. **Build for production**
-   ```bash
-   npm run build
-   ```
+## 🛠️ Development
 
-## 📁 Project Structure
+### Prerequisites
+- Node.js 23.2.0 or higher
+- npm 10.9.0 or higher
 
+### Build System
+- Gulp for task automation
+- PostCSS for CSS processing
+- Tailwind CSS for styling
+- Express for development server
+
+### Project Structure
 ```
-boilerplate/
-├── src/                  # Source files
-│   ├── css/             # CSS files
-│   │   └── app.css      # Main CSS file
-│   ├── js/              # JavaScript files
-│   │   └── app.js       # Main JS file
-│   ├── components/      # Reusable components
-│   │   ├── header.html
-│   │   ├── footer.html
-│   │   └── home/        # Page-specific components
-│   └── pages/           # HTML pages
-│       └── index.html
-├── dist/                # Compiled files
-├── gulpfile.js         # Gulp configuration
-├── tailwind.config.js  # Tailwind configuration
-├── postcss.config.js   # PostCSS configuration
-└── package.json        # Project dependencies
+mdpaste/
+├── src/
+│   ├── components/     # Reusable HTML components
+│   ├── css/           # Stylesheets and Tailwind config
+│   ├── js/           # JavaScript files
+│   └── pages/        # HTML pages
+├── gulpfile.js       # Build configuration
+└── package.json      # Dependencies and scripts
 ```
 
-## 🎨 Customization
-
-### Tailwind Configuration
-
-The template includes a customized `tailwind.config.js` with:
-- Custom color schemes
-- Dark mode support
-- Typography plugin
-- Extended theme settings
-
-### Components
-
-Components are modular and can be included using:
-```html
-@@include('../components/header.html')
-```
-
-### Dark Mode
-
-Dark mode is implemented using Tailwind's `dark:` variant and supports:
-- System preference detection
-- Manual toggle
-- Persistent preference storage
-
-## 📜 Available Scripts
-
+### Available Scripts
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
-- `npm run clean` - Clean dist folder
 - `npm run format` - Format code with Biome
 - `npm run lint` - Lint code with Biome
-- `npm run check` - Run Biome checks
-- `npm run update-deps` - Update dependencies
-
-## 🔧 Development
-
-### Adding New Pages
-
-1. Create a new HTML file in `src/pages/`
-2. Include necessary components
-3. Add content between header and footer
-4. Run development server to see changes
-
-### Creating Components
-
-1. Add new component in `src/components/`
-2. Use Tailwind classes for styling
-3. Include in pages using `@@include()`
-
-### Styling
-
-- Use Tailwind utility classes
-- Add custom styles in `src/css/app.css`
-- Configure theme in `tailwind.config.js`
-
-## 📦 Production Build
-
-The production build:
-1. Minifies CSS and JavaScript
-2. Optimizes assets
-3. Generates sourcemaps
-4. Creates production-ready files in `dist/`
-
-## 🌳 Branching Strategy
-
-We follow a simplified Git flow with these main branches:
-
-### Main Branches
-- `main` - Production-ready code
-- `develop` - Development branch, integration of features
-
-### Supporting Branches
-- `feature/*` - New features and non-emergency fixes
-- `hotfix/*` - Urgent production fixes
-- `release/*` - Release preparation
-
-### Branch Naming
-- Features: `feature/feature-name`
-- Hotfixes: `hotfix/issue-description`
-- Releases: `release/version-number`
-
-### Workflow
-1. Create feature branch from `develop`
-   ```bash
-   git checkout -b feature/new-feature develop
-   ```
-
-2. Work on the feature
-   ```bash
-   git add .
-   git commit -m "feat: add new feature"
-   ```
-
-3. Merge back into develop
-   ```bash
-   git checkout develop
-   git merge --no-ff feature/new-feature
-   ```
-
-4. Delete feature branch
-   ```bash
-   git branch -d feature/new-feature
-   ```
-
-5. Create release
-   ```bash
-   git checkout -b release/1.0.0 develop
-   ```
-
-6. Merge to main and tag
-   ```bash
-   git checkout main
-   git merge --no-ff release/1.0.0
-   git tag -a v1.0.0 -m "Version 1.0.0"
-   ```
 
 ## 🤝 Contributing
 
+Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md) first.
+
+### Development Process
 1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Open a pull request
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'feat: add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## 👤 Author
-
-- **Milon Biswas**
-  - GitHub: [@0xmilon](https://github.com/0xmilon)
-  - Twitter: [@0xmilon](https://x.com/0xmilon)
-
-## 📄 License
+## 📜 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
-- [Tailwind CSS](https://tailwindcss.com)
-- [Gulp](https://gulpjs.com)
-- [PostCSS](https://postcss.org)
-- [Biome](https://biomejs.dev)
+- [marked.js](https://marked.js.org/) for Markdown rendering
+- [Tailwind CSS](https://tailwindcss.com) for styling
+- [JetBrains Mono](https://www.jetbrains.com/lp/mono/) for typography
 
----
+## 💖 Support
 
-Made with ❤️ by [Milon Biswas](https://github.com/0xmilon)
+If you find MDPaste useful, please consider:
+
+- Starring the repository
+- Following [@0xmilon](https://twitter.com/0xmilon) on Twitter
+- [Buying me a coffee](https://www.buymeacoffee.com/0xmilon)
