@@ -8,37 +8,42 @@ const del = require('del');
 
 // File paths
 const paths = {
+  src: 'src',
+  dist: 'dist',
   css: {
     src: 'src/css/**/*.css',
-    dest: 'dist/css/'
+    dest: 'dist/css'
   },
   js: {
     src: 'src/js/**/*.js',
-    dest: 'dist/js/'
+    dest: 'dist/js'
   },
   html: {
     src: 'src/pages/**/*.html',
-    dest: 'dist/'
+    watch: ['src/pages/**/*.html', 'src/components/**/*.html', 'src/layouts/**/*.html'],
+    dest: 'dist'
   },
-  components: 'src/components/**/*.html',
-  layouts: 'src/layouts/**/*.html'
+  assets: {
+    src: 'src/assets/**/*',
+    dest: 'dist/assets'
+  }
 };
 
 // Clean dist folder
 function clean() {
-  return del(['dist']);
+  return del([paths.dist]);
 }
 
 // CSS task
 function css() {
-  const postcssPlugins = [
+  const plugins = [
     require('tailwindcss'),
     require('autoprefixer'),
     require('cssnano')
   ];
 
   return gulp.src(paths.css.src)
-    .pipe(postcss(postcssPlugins))
+    .pipe(postcss(plugins))
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest(paths.css.dest))
     .pipe(browserSync.stream());
@@ -64,14 +69,22 @@ function html() {
     .pipe(browserSync.stream());
 }
 
+// Copy assets
+function assets() {
+  return gulp.src(paths.assets.src)
+    .pipe(gulp.dest(paths.assets.dest))
+    .pipe(browserSync.stream());
+}
+
 // BrowserSync server
 function serve(done) {
   browserSync.init({
     server: {
-      baseDir: './dist'
+      baseDir: paths.dist
     },
     port: 3000,
-    open: false
+    open: true,
+    notify: false
   });
   done();
 }
@@ -80,20 +93,21 @@ function serve(done) {
 function watchFiles(done) {
   gulp.watch(paths.css.src, css);
   gulp.watch(paths.js.src, js);
-  gulp.watch([paths.html.src, paths.components, paths.layouts], html);
-  gulp.watch('dist/**/*').on('change', browserSync.reload);
+  gulp.watch(paths.html.watch, html);
+  gulp.watch(paths.assets.src, assets);
   done();
 }
 
 // Complex tasks
-const build = gulp.series(clean, gulp.parallel(css, js), html);
+const build = gulp.series(clean, gulp.parallel(css, js, html, assets));
 const watch = gulp.series(build, serve, watchFiles);
 
 // Export tasks
+exports.clean = clean;
 exports.css = css;
 exports.js = js;
 exports.html = html;
-exports.clean = clean;
+exports.assets = assets;
 exports.build = build;
 exports.watch = watch;
 exports.default = watch;

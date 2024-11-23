@@ -1,102 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MD Paste</title>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    @@include('../components/meta.html')
+    <title>View · MDPaste</title>
+    @@include('../components/styles.html')
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <style type="text/tailwindcss">
-        @layer utilities {
-            footer a {
-                @apply mx-0.5;
-            }
-            .content-custom {
-                background-color: #262626;
-                border: 2px solid #171717;
-                box-shadow: 2px 2px 0 #0a0a0a;
-                border-radius: 4px;
-                color: #e5e5e5;
-            }
-            .btn-custom {
-                background-color: #262626;
-                border: 2px solid #171717;
-                box-shadow: 2px 2px 0 #0a0a0a;
-                border-radius: 4px;
-                color: #e5e5e5;
-                font-weight: 700;
-                font-family: 'JetBrains Mono', monospace;
-            }
-            .btn-custom:hover {
-                background-color: #404040;
-            }
-            .btn-custom:active {
-                box-shadow: 1px 1px 0 #0a0a0a;
-                transform: translate(1px, 1px);
-            }
-        }
-    </style>
-    <style>
-        /* Markdown Styles */
-        .markdown-body {
-            color: #e5e5e5;
-            line-height: 1.6;
-            font-family: 'JetBrains Mono', monospace;
-        }
-        .markdown-body h1 {
-            font-size: 2em;
-            margin-bottom: 0.5em;
-            padding-bottom: 0.3em;
-            border-bottom: 2px solid #404040;
-        }
-        .markdown-body h2 {
-            font-size: 1.5em;
-            margin-bottom: 0.5em;
-            padding-bottom: 0.3em;
-            border-bottom: 1px solid #404040;
-        }
-        .markdown-body h3 {
-            font-size: 1.25em;
-            margin-bottom: 0.5em;
-        }
-        .markdown-body p {
-            margin-bottom: 1em;
-        }
-        .markdown-body ul, .markdown-body ol {
-            margin-bottom: 1em;
-            padding-left: 2em;
-        }
-        .markdown-body li {
-            margin-bottom: 0.25em;
-        }
-        .markdown-body code {
-            background-color: #171717;
-            padding: 0.2em 0.4em;
-            border-radius: 3px;
-            font-family: 'JetBrains Mono', monospace;
-        }
-        .markdown-body pre code {
-            display: block;
-            padding: 1em;
-            overflow-x: auto;
-            background-color: #171717;
-        }
-        .markdown-body blockquote {
-            border-left: 4px solid #404040;
-            padding-left: 1em;
-            margin-bottom: 1em;
-            color: #a3a3a3;
-        }
-    </style>
 </head>
-<body class="bg-neutral-900">
-    <div class="flex flex-col h-screen">
+<body>
+    <div class="flex flex-col min-h-screen">
         <div class="flex-grow max-w-screen-xl w-full mx-auto px-4">
             <main class="h-full pt-8">
                 <div class="flex flex-col h-full">
                     <div class="w-full flex-grow content-custom p-8 overflow-auto">
-                        <div class="markdown-body" id="content">
+                        <div class="prose-custom" id="content">
                             <!-- Content will be rendered here -->
                         </div>
                     </div>
@@ -109,31 +25,7 @@
                 </div>
             </main>
         </div>
-        <footer class="text-neutral-500 text-center py-3 sm:py-4 text-xs space-y-3 sm:space-y-2 font-['JetBrains_Mono'] px-3 sm:px-4">
-            <nav aria-label="Footer Navigation" class="flex flex-wrap justify-center gap-x-1 gap-y-2">
-                <a href="/" class="hover:text-neutral-400 py-0.5">new</a><span class="last:hidden">&middot;</span>
-                <a href="/what" class="hover:text-neutral-400 py-0.5">about</a><span class="last:hidden">&middot;</span>
-                <a href="/how" class="hover:text-neutral-400 py-0.5">how</a><span class="last:hidden">&middot;</span>
-                <a href="/langs" class="hover:text-neutral-400 py-0.5">privacy</a><span class="last:hidden">&middot;</span>
-                <a href="/langs" class="hover:text-neutral-400 py-0.5">tos</a><span class="last:hidden">&middot;</span>
-                <a href="/about#contacts" class="hover:text-neutral-400 py-0.5">contacts</a>
-            </nav>
-            <div class="flex flex-wrap items-center justify-center gap-x-2 gap-y-2">
-                <p class="inline-flex items-center gap-1 min-w-0">
-                    <span class="whitespace-nowrap">mdpaste.com</span>
-                    <span class="hidden sm:inline">&middot;</span>
-                    <span class="hidden sm:inline whitespace-nowrap">anonymous markdown pastebin</span>
-                </p>
-                <span class="hidden sm:inline">&middot;</span>
-                <div class="flex flex-wrap items-center gap-x-2 gap-y-1 justify-center">
-                    <a href="https://github.com/yourusername/mdpaste" class="hover:text-neutral-400 py-0.5" target="_blank" rel="noopener noreferrer">github</a>
-                    <span class="hidden sm:inline">&middot;</span>
-                    <a href="https://twitter.com/yourusername" class="hover:text-neutral-400 py-0.5" target="_blank" rel="noopener noreferrer">𝕏 @yourusername</a>
-                    <span class="hidden sm:inline">&middot;</span>
-                    <a href="https://www.buymeacoffee.com/yourusername" class="hover:text-neutral-400 py-0.5" target="_blank" rel="noopener noreferrer">☕️ buy me a coffee</a>
-                </div>
-            </div>
-        </footer>
+        @@include('../components/footer.html')
     </div>
     <script>
         // Sample markdown content - would be replaced with actual content
@@ -143,6 +35,8 @@
 - Clean, distraction-free reading
 - Full markdown support
 - Syntax highlighting
+
+Paragraphs are separated by empty lines.
 
 ## Code Example
 \`\`\`javascript
