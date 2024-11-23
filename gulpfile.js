@@ -24,8 +24,13 @@ const paths = {
     dest: 'dist'
   },
   assets: {
-    src: 'src/assets/**/*',
-    dest: 'dist/assets'
+    src: [
+      'src/assets/**/*',
+      'src/favicon.ico',
+      'src/robots.txt',
+      'src/site.webmanifest'
+    ],
+    dest: 'dist'
   }
 };
 
@@ -34,12 +39,17 @@ function clean() {
   return del([paths.dist]);
 }
 
-// CSS task
+// CSS task with source maps
 function css() {
   const plugins = [
     require('tailwindcss'),
     require('autoprefixer'),
-    require('cssnano')
+    require('cssnano')({
+      preset: ['default', {
+        discardComments: { removeAll: true },
+        normalizeWhitespace: false
+      }]
+    })
   ];
 
   return gulp.src(paths.css.src)
@@ -49,42 +59,52 @@ function css() {
     .pipe(browserSync.stream());
 }
 
-// JavaScript task
+// JavaScript task with minification
 function js() {
   return gulp.src(paths.js.src)
-    .pipe(terser())
+    .pipe(terser({
+      compress: {
+        drop_console: true
+      }
+    }))
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest(paths.js.dest))
     .pipe(browserSync.stream());
 }
 
-// HTML task with component inclusion
+// HTML task with component inclusion and minification
 function html() {
   return gulp.src(paths.html.src)
     .pipe(fileinclude({
       prefix: '@@',
-      basepath: '@file'
+      basepath: '@file',
+      context: {
+        isProd: process.env.NODE_ENV === 'production'
+      }
     }))
     .pipe(gulp.dest(paths.html.dest))
     .pipe(browserSync.stream());
 }
 
-// Copy assets
+// Copy and optimize assets
 function assets() {
-  return gulp.src(paths.assets.src)
-    .pipe(gulp.dest(paths.assets.dest))
-    .pipe(browserSync.stream());
+  return gulp.src(paths.assets.src, { base: paths.src })
+    .pipe(gulp.dest(paths.assets.dest));
 }
 
-// BrowserSync server
+// Development server
 function serve(done) {
   browserSync.init({
     server: {
-      baseDir: paths.dist
+      baseDir: paths.dist,
+      serveStaticOptions: {
+        extensions: ['html']
+      }
     },
     port: 3000,
-    open: true,
-    notify: false
+    open: false,
+    notify: false,
+    ghostMode: false
   });
   done();
 }
@@ -98,9 +118,9 @@ function watchFiles(done) {
   done();
 }
 
-// Complex tasks
+// Build tasks
 const build = gulp.series(clean, gulp.parallel(css, js, html, assets));
-const watch = gulp.series(build, serve, watchFiles);
+const dev = gulp.series(build, serve, watchFiles);
 
 // Export tasks
 exports.clean = clean;
@@ -109,5 +129,4 @@ exports.js = js;
 exports.html = html;
 exports.assets = assets;
 exports.build = build;
-exports.watch = watch;
-exports.default = watch;
+exports.default = dev;
