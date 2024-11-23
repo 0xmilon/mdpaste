@@ -4,6 +4,7 @@ const fileinclude = require('gulp-file-include');
 const terser = require('gulp-terser');
 const browserSync = require('browser-sync').create();
 const rename = require('gulp-rename');
+const del = require('del');
 
 // File paths
 const paths = {
@@ -22,6 +23,11 @@ const paths = {
   components: 'src/components/**/*.html',
   layouts: 'src/layouts/**/*.html'
 };
+
+// Clean dist folder
+function clean() {
+  return del(['dist']);
+}
 
 // CSS task
 function css() {
@@ -56,12 +62,6 @@ function html() {
     }))
     .pipe(gulp.dest(paths.html.dest))
     .pipe(browserSync.stream());
-}
-
-// Clean dist folder
-async function clean() {
-  const { deleteAsync } = await import('del');
-  await deleteAsync('dist/**/*');
 }
 
 // BrowserSync server

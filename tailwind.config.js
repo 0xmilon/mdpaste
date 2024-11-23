@@ -3,6 +3,7 @@ module.exports = {
   darkMode: 'class',
   content: [
     "./src/**/*.{html,js}",
+    "./dist/**/*.{html,js}"
   ],
   theme: {
     extend: {
@@ -12,6 +13,7 @@ module.exports = {
       },
       fontFamily: {
         'noto': ['Noto Serif', 'serif'],
+        'mono': ['JetBrains Mono', 'monospace'],
       },
       typography: ({ theme }) => ({
         DEFAULT: {
@@ -35,6 +37,120 @@ module.exports = {
               color: 'rgb(163 163 163)',
               fontSize: '0.875rem',
               marginTop: '0.75rem',
+            },
+            '[class~="lead"]': {
+              color: theme('colors.neutral.400'),
+            },
+            a: {
+              color: theme('colors.neutral.200'),
+              '&:hover': {
+                color: theme('colors.neutral.100'),
+              },
+            },
+            strong: {
+              color: theme('colors.neutral.200'),
+            },
+            'ol[type="A"]': {
+              '--list-counter-style': 'upper-alpha',
+            },
+            'ol[type="a"]': {
+              '--list-counter-style': 'lower-alpha',
+            },
+            'ol[type="A" s]': {
+              '--list-counter-style': 'upper-alpha',
+            },
+            'ol[type="a" s]': {
+              '--list-counter-style': 'lower-alpha',
+            },
+            'ol[type="I"]': {
+              '--list-counter-style': 'upper-roman',
+            },
+            'ol[type="i"]': {
+              '--list-counter-style': 'lower-roman',
+            },
+            'ol[type="I" s]': {
+              '--list-counter-style': 'upper-roman',
+            },
+            'ol[type="i" s]': {
+              '--list-counter-style': 'lower-roman',
+            },
+            'ol[type="1"]': {
+              '--list-counter-style': 'decimal',
+            },
+            'ol > li': {
+              position: 'relative',
+            },
+            'ol > li::before': {
+              content: 'counter(list-item, var(--list-counter-style, decimal)) "."',
+              position: 'absolute',
+              fontWeight: '400',
+              color: theme('colors.neutral.500'),
+            },
+            'ul > li': {
+              position: 'relative',
+            },
+            'ul > li::before': {
+              content: '""',
+              position: 'absolute',
+              backgroundColor: theme('colors.neutral.500'),
+              borderRadius: '50%',
+            },
+            hr: {
+              borderColor: theme('colors.neutral.800'),
+              marginTop: '2em',
+              marginBottom: '2em',
+            },
+            blockquote: {
+              fontWeight: '500',
+              fontStyle: 'italic',
+              color: theme('colors.neutral.200'),
+              borderLeftWidth: '0.25rem',
+              borderLeftColor: theme('colors.neutral.800'),
+              quotes: '"\\201C""\\201D""\\2018""\\2019"',
+              marginTop: '1.6em',
+              marginBottom: '1.6em',
+              paddingLeft: '1em',
+            },
+            h1: {
+              color: theme('colors.neutral.200'),
+              fontWeight: '700',
+            },
+            h2: {
+              color: theme('colors.neutral.200'),
+              fontWeight: '600',
+            },
+            h3: {
+              color: theme('colors.neutral.200'),
+              fontWeight: '600',
+            },
+            h4: {
+              color: theme('colors.neutral.200'),
+              fontWeight: '600',
+            },
+            'figure figcaption': {
+              color: theme('colors.neutral.400'),
+            },
+            code: {
+              color: theme('colors.neutral.200'),
+              fontWeight: '500',
+            },
+            'a code': {
+              color: theme('colors.neutral.200'),
+            },
+            pre: {
+              color: theme('colors.neutral.200'),
+              backgroundColor: theme('colors.neutral.900'),
+            },
+            'pre code': {
+              backgroundColor: 'transparent',
+              borderWidth: '0',
+              borderRadius: '0',
+              padding: '0',
+              fontWeight: '400',
+              color: 'inherit',
+              fontSize: 'inherit',
+              fontFamily: 'inherit',
+              lineHeight: 'inherit',
             },
           },
         },
